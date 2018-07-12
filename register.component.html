@@ -1,0 +1,115 @@
+<div class="register"
+     fxLayout="row"
+     fxLayoutAlign="center center">
+    <div class="register-session-card">
+        <div class="header"
+             fxLayout="column"
+             fxLayoutAlign="center center">
+            <img src="assets/img/mes_logo.png">
+        </div>
+        <div class="content" fxLayout="column" fxLayoutGap="24px" [formGroup]="form">
+             <div fxLayout="column" fxLayoutGap="8px" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="24px">
+                <mat-form-field fxFlex="grow">
+                  <mat-placeholder>Last Name</mat-placeholder>
+                  <input matInput formControlName="lastname" required>                  
+                </mat-form-field>
+
+                <div fxLayout="row" fxLayoutGap="8px">
+                        <mat-form-field fxFlex="grow">
+                                <mat-placeholder>First Name</mat-placeholder>
+                                <input matInput formControlName="firstname" required>                  
+                              </mat-form-field>                 
+                  <div fxLayout="row" fxLayoutGap="8px">
+                      <mat-form-field fxFlex="grow">
+                    <mat-placeholder>Middle Name</mat-placeholder>
+                    <input matInput formControlName="middlename">                    
+                  </mat-form-field>
+                  </div>
+                </div>
+              </div>    
+           
+            <div fxFlex="grow" fxLayout="column" fxLayoutGap="8px">
+                <mat-form-field fxFlex="grow">
+                    <mat-placeholder>Title</mat-placeholder>
+                    <input matInput
+                           required
+                           formControlName="title">
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="grow" fxLayout="column" fxLayoutGap="8px">
+                <mat-form-field fxFlex="grow">
+                    <mat-placeholder>Company</mat-placeholder>
+                    <input matInput
+                           required
+                           formControlName="companyName">
+                </mat-form-field>
+            </div>
+            <div fxFlex="grow"
+                 fxLayout="column"
+                 fxLayoutGap="8px">
+                <mat-form-field fxFlex="grow">
+                    <mat-placeholder>Address</mat-placeholder>
+                    <input matInput  formControlName="address">                                                            
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" fxLayoutGap="8px" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="24px">
+                    <mat-form-field fxFlex="grow">
+                      <mat-placeholder>City</mat-placeholder>
+                      <input matInput formControlName="city" >                  
+                    </mat-form-field>                          
+                      <mat-form-field fxFlex="grow">
+                        <mat-placeholder>State</mat-placeholder>                                                
+                         <mat-select formControlName="state">
+                          <mat-option *ngFor="let stateObj of states" [value]="stateObj.stateId">{{ stateObj.state }}</mat-option>                         
+                        </mat-select> 
+                      </mat-form-field>
+                      <div fxLayout="row" fxLayoutGap="8px">
+                          <mat-form-field fxFlex="grow">
+                        <mat-placeholder>Zip Code</mat-placeholder>
+                        <input matInput formControlName="zipcode"  >                    
+                      </mat-form-field>
+                      </div>                    
+                  </div>
+                  <div fxLayout="column" fxLayoutGap="8px" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="24px">
+                        <mat-form-field fxFlex="grow">
+                          <mat-placeholder>Phone</mat-placeholder>
+                          <input  matInput formControlName="phone" required >                  
+                        </mat-form-field>                                  
+                        <mat-form-field fxFlex="grow">
+                                <mat-placeholder>Ext</mat-placeholder>
+                                <input matInput formControlName="phoneExt" >                  
+                              </mat-form-field>                
+                          <div fxLayout="row" fxLayoutGap="8px">
+                            <mat-form-field fxFlex="grow">
+                            <mat-placeholder>Fax</mat-placeholder>
+                            <input matInput formControlName="fax" type="number" >                    
+                          </mat-form-field>
+                          </div>                        
+                      </div>
+                      <div fxLayout="column" fxLayoutGap="8px" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="24px">
+                            <mat-form-field fxFlex="grow">
+                              <mat-placeholder>Email</mat-placeholder>
+                              <input matInput formControlName="email" required>                  
+                            </mat-form-field>                                          
+                            <mat-form-field fxFlex="grow">
+                                    <mat-placeholder>UserID</mat-placeholder>
+                                    <input matInput formControlName="userid" required>                  
+                                  </mat-form-field>                                                                                                          
+                     </div>      
+                     <div fxLayout="column" fxLayoutGap="8px" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="24px">
+                            <button  color="primary" mat-raised-button  (click)="send(form)">SUBMIT</button>
+                            <button type="button"
+                            color="primary"
+                            mat-raised-button                    
+                            (click)="send()">Privacy Policy</button>
+                            <p class="extra">
+                                    Already have an account?
+                                    <a [routerLink]="['/']">Sign in here</a>
+                                </p>
+                     </div>      
+           
+            
+        </div>
+    </div>
+</div>
