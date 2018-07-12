@@ -1,0 +1,15 @@
+user.service.ts:
+getStates() : Observable<State[]>
+{
+	return this.http.get(this.rootUrl+'api/Custom/State').pipe(map((resp) => <State[]>resp.json().ResultantModel || []));
+}
+
+register.component.ts:
+getstates(): any {
+    //return this.states;
+    this.userService.getStates().subscribe(result => {
+      this.states = result;
+    }
+    );
+  }
+
